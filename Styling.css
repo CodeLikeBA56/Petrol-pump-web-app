@@ -12,7 +12,7 @@
 :root {
     --bg-color : #fdfdfd;
     --text-color: #333;
-    --main-color: #78ca5b;
+    --main-color: yellow;
     --white-color: #fdfdfd;
     --shadow-color: rgba(0, 0, 0, .2);
 }
@@ -27,13 +27,12 @@
 }
 body {
     color: var(--text-color);
-    background: var(--bg-color);
 }
 section {
     min-height: 100vh;
     position: relative;
-    padding: 10rem 7% 2rem;
-    border: 1px solid var(--main-color);
+    padding: 10rem 4% 2rem;
+    border: 2px solid #4bb15c;
 }
 .navbar{
     position: fixed;
@@ -41,23 +40,37 @@ section {
     left: 0;
     width: 100%;
     height: 80px;
-    padding: 2rem 7%;
+    padding: 0rem 4%;
     display: flex;
     align-items: center;
     z-index: 100;
     background: transparent;
     transition: .5s;
+    border-bottom: 1px solid #fff;
 }
 .navbar.sticky {
-    background: var(--bg-color);
     box-shadow: 0 0.1rem 1rem var(--shadow-color);
+    background-color: var(--bg-color);
 }
-.website-logo{
-    cursor: default;
-    font-size: 25px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    font-family: monospace;
+.website-logo {
+    width: max-content;
+    height: 100%;
+    display: flex;
+    gap: 0 20px;
+    align-items: center;
+    justify-content: center;
+}
+.website-logo img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    object-fit: cover;
+}
+.website-logo h5 {
+    height: 100%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
     color: var(--text-color);
 }
 .navbar-container{
@@ -84,12 +97,12 @@ section {
 }
 .active, .links:hover{
     color: var(--white-color);
-    background-color: var(--main-color);
+    background-color: #0851a0;
 }
     /* Home-Section Styling*/
 #home{
     display: flex;
-    gap: 150px;
+    gap: 100px;
     flex-direction: column;
     justify-content: center;
 }
@@ -100,7 +113,7 @@ section {
     flex-direction: column;
     align-items: stretch;
     padding: 3rem;
-    border-left: 5px solid var(--main-color);
+    border-left: 5px solid #4bb15c;
 }
 .container h1 {
     font-size: 40px;
@@ -121,7 +134,7 @@ p {
     width: 100%;
     height: 150px;
     border-radius: 10px;
-    background-color: var(--main-color);
+    background-color: #0851a0;
 }
 .quotes blockquote{
     font-size: 19px;
@@ -159,30 +172,135 @@ h5 {
 #about {
     display: flex;
     gap: 100px;
+    padding-top: 5rem;
     flex-direction: column;
-    justify-content: end;
+    justify-content: center;
+    background: linear-gradient(90deg, rgba(76, 175, 80, 1) 0%, rgba(49, 220, 255, 1) 100%);
 }
 #about .container {
     width: 100%;
+    height: max-content;
     display: flex;
     gap: 30px;
-    flex-direction: column;
-    align-items: stretch;
-    padding: 3rem;
+    flex-direction: row;
+    padding: 0.5rem 3rem;
     border-left: 5px solid var(--main-color);
+    border-right: 5px solid var(--main-color);
 }
-#about .footer {
+.about-us {
+    gap: 10px;
+    width: 50%;
     display: flex;
-    gap: 20px;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
-    height: 150px;
-    border-radius: 10px;
-    background-color: var(--main-color);
 }
-.footer h1{
-    font-size: 30px;
-    font-family: monospace;
+.owner-detail {
+    gap: 10px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+.owner-detail img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.contact {
+    gap: 10px;
+    width: 50%;
+    padding: 3rem;
+    border-left: 5px solid var(--main-color);
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 767px) { /* For mobile devices */
+       /* Home-Section Styling*/
+    .navbar{
+        padding: 4rem 4%;
+    }
+    .website-logo h5{
+        display: none;
+    }
+    .links{
+        padding: 0 .5rem;
+    }
+   #home{
+        gap: 100px;
+    }
+    #home .container {
+        gap: 15px;
+        padding: 2rem;
+    }
+    .container h1 {
+        font-size: 25px;
+        font-weight: 800;
+        letter-spacing: 1px;
+    }
+    p {
+        font-size: 16px;
+    }
+    .quotes {
+        display: flex;
+        height: 170px;
+    }
+    .quotes blockquote{
+        font-size: 14px;
+    }
+
+    /* Services styling*/
+
+    #services {
+        height: max-content;
+        padding: 0rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #services h1 {
+        font-size: 30px;
+    }
+    img {
+        height: 50vh;
+        width: 50%;
+        object-fit: cover;
+    }
+        /* Contact Us Styling */
+    #about {
+        display: flex;
+        gap: 80px;
+        padding-top: 5rem;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #about .container {
+        width: 100%;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 0.5rem 2rem;
+        border-right: none;
+    }
+    .about-us {
+        gap: 10px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .owner-detail {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .contact {
+        width: 100%;
+        padding: 2rem;
+    }
 }
